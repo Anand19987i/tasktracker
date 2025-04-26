@@ -184,7 +184,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
                   type="text"
                   value={newTask.title}
                   onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-                  className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full p-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
                   placeholder="Enter task title"
                   required
                 />
@@ -195,7 +195,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
                 <textarea
                   value={newTask.description}
                   onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-                  className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none h-24"
+                  className="w-full p-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none h-24"
                   placeholder="Enter task description"
                 />
               </div>
@@ -205,7 +205,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
                 <select
                   value={newTask.status}
                   onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
-                  className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full p-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
                 >
                   <option value="pending">Pending</option>
                   <option value="in-progress">In Progress</option>
@@ -226,7 +226,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-green-700"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md  hover:bg-blue-700"
                 >
                   Create Task
                 </button>
