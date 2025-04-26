@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import CreateProject from '../components/CreateProject';
 import Projects from '../project/Projects';
@@ -6,8 +8,16 @@ import Projects from '../project/Projects';
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [refresh, setRefresh] = useState(false);
+  
+  const { user } = useSelector((store) => store.auth);
+  const navigate = useNavigate();
 
-  // Trigger re-fetch in Projects by toggling refresh state
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
+  }, [user, navigate]);
+
   const handleProjectCreated = () => {
     setShowModal(false);
     setRefresh((prev) => !prev);
@@ -15,8 +25,8 @@ const Dashboard = () => {
 
   return (
     <Layout 
-      username="John Doe" 
-      onButtonClick={() => setShowModal(true)}   // 👈 fix here
+      username={user?.username || 'Guest'} 
+      onButtonClick={() => setShowModal(true)}
       buttonLabel="Add New Project"
     >
       <div className="text-slate-800">
