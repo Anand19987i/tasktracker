@@ -7,7 +7,7 @@ export const createProject = async (req, res) => {
         if (existingProjects.length >= 4) {
             return res.status(403).json({
                 success: false,
-                message: 'Project limit reached'
+                message: 'You have reached the project limit'
             })
         }
         const { name } = req.body;
