@@ -59,7 +59,7 @@ const FavouriteProject = () => {
             <div className="p-2">
                 <h2 className="text-2xl text-gray-800 font-medium mb-6">Your Favorite Projects</h2>
                 {
-                    favoriteProjects?.length === 0 && (
+                    favoriteProjects?.length === 0 && !loading && (
                         <p className='text-gray-600'>No Favourite Projects.</p>
                     )
                 }
