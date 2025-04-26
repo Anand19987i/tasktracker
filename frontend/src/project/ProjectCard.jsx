@@ -130,8 +130,8 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
       </div>
 
       {/* Task Summary */}
-      <p className="text-sm text-gray-600 mb-4">
-        {project.tasks.length} task{project.tasks.length !== 1 && 's'}
+      <p className="text-sm font-medium text-gray-800 mb-4">
+        {project?.tasks?.length} task{project?.tasks?.length !== 1 && 's'}
       </p>
 
       {/* Action Buttons */}
